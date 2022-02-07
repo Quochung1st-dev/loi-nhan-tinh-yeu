@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito');
+*{
+	font-family: 'Nunito', sans-serif;
+	padding:  0;
+	margin: 0;
+	box-sizing: border-box;
+}
+@media (max-width: 991.98px) {
+    .box2 {
+    max-height: 500px ;
+    overflow-y: scroll;
+    }
+}
+body, html{
+	height: 100%;
+	  overflow: hidden;
+}
+#bee{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: -20%;
+	top: 0%;
+	opacity: 0;
+	z-index: 99;
+}
+#sun{
+	display: inline-block;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	opacity: 0;
+	transition: 1s;
+	z-index: 1;
+}
+.flower-footer{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	transition: 1s;
+	pointer-events: none;
+	background: url(flower.png);
+	background-size: contain;
+	background-position: center;
+	height: 10%;
+}
+@keyframes bee_fly{
+	0%{
+		left: -10%;
+		top: 0%;
+	}
+	10%{
+		left: 10%;
+		top: 2%;
+	}
+	25%{
+		left: 40%;
+		top: 30%;
+	}
+	50%{
+		left: 50%;
+		top: 20%;
+	}
+	75%{
+		left: 30%;
+		top: 30%;
+	}
+
+	100%{
+		left: 50%;
+		top: 50%;
+	}
+}
+#bee img{
+	transform: translate(0px,0px) scaleX(-1);
+	animation-name: bee;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+@keyframes bee{
+	0%{
+		transform: translate(0px,5px) scaleX(-1);
+	}
+	10%{
+		transform: translate(0px,0px) scaleX(-1);
+	}
+	20%{
+		transform: translate(0px,5px) scaleX(-1);
+	}
+	30%{
+		transform: translate(0px,0px) scaleX(-1);
+	}
+	40%{
+		transform: translate(0px,5px) scaleX(-1);
+	}
+	50%{
+		transform: translate(0px,0px) scaleX(-1);
+	}
+	60%{
+		transform: translate(0px,5px) scaleX(-1);
+	}
+	70%{
+		transform: translate(0px,0px) scaleX(-1);
+	}
+	80%{
+		transform: translate(0px,5px) scaleX(-1);
+	}	
+	90%{
+		transform: translate(0px,0px) scaleX(-1);
+	}
+	100%{
+		transform: translate(0px,5px) scaleX(-1);
+	}
+	
+}
+main{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+#full-box{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+.box2{
+	width: 100%;
+	border-radius: 12px;
+	padding: 24px;
+	position: relative;
+	border: 1px #ff689c solid;
+	background: #f3f3f34a;
+	display: none;
+    z-index: 99;
+    background: white;
+}
+
+#img-img-left{
+	position: absolute;
+	bottom: -10px;
+	right: -5px;
+}
+.box{
+	width: 100%;
+	border-radius: 12px;
+	padding: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+	border: 1px #ff689c solid;
+	background: #f3f3f34a;
+
+}
+.letter{
+	width: 250px;
+	height: 250px;
+	background-size: contain;
+	display: inline-block;
+	cursor: pointer;
+	display: none;
+}
+#loading{
+	background: #ffdcdc;
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	z-index: 99;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#loading img,h2{
+	animation-name: loading;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+@keyframes loading{
+	0%{
+		opacity: 0.2;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0.2;
+	}
+}
+.hearts{
+	position: absolute;
+	transition: 0.5s;
+	top: -20px;
+	left: -30px;
+	width: 74px;
+	height: 48px;
+	background: url(hearts.png);
+	background-position: bottom;
+	background-size: contain;
+	background-repeat: no-repeat;
+	transform: rotate(343deg) scale(0.8);
+	animation-name: hearts;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	pointer-events: none;
+}
+@keyframes hearts{
+	0%{
+		transform: rotate(343deg) scale(0.8);
+	}
+
+	50%{
+		transform: rotate(343deg) scale(1.05);
+	}
+	55%{
+		transform: rotate(343deg) scale(1.06);
+	}
+	60%{
+		transform: rotate(343deg) scale(1.07);
+	}
+	65%{
+		transform: rotate(343deg) scale(1.25);
+	}
+	68%{
+		transform: rotate(343deg) scale(1.07);
+	}
+	71%{
+		transform: rotate(343deg) scale(1.25);
+	}
+	74%{
+		transform: rotate(343deg) scale(1.07);
+
+	}
+	77%{
+		transform: rotate(343deg) scale(1.25);
+	}
+	100%{
+		transform: rotate(343deg) scale(0.8);	
+	}
+}
+.box:before{
+	content: '';
+	position: absolute;
+	width: 120px;
+	height: 100%;
+	background: url(bears.svg);
+	background-position: bottom;
+	background-size: contain;
+	background-repeat: no-repeat;
+	right: -11px;
+	pointer-events: none;
+}
+.form-control{
+	border-radius: 6px;
+	border: 1px solid #D8D6DE;
+	padding: 3px 6px;
+}
+.text-ngyt{
+	color:  #ff689c  !important;	
+}
+.btn-outline-ngyt{
+	background: none;
+	border: 1px solid  #ff689c ;
+	color:  #ff689c  !important;
+	transition: 0.5s;
+}
+.btn-outline-ngyt:focus{
+	background: #ff689c ;
+	color: white !important;
+	box-shadow: 0 3px 10px 0 rgb(233 30 99 / 12%);
+}
+.form-control:focus{
+	z-index: 1;
+	border-color: #ff689c ;
+	box-shadow: 0 3px 10px 0 rgb(233 30 99 / 12%);
+}
